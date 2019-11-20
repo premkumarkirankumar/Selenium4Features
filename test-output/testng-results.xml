@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18968" started-at="2019-11-19T20:55:35 EST" finished-at="2019-11-19T20:55:54 EST">
+  <suite started-at="2019-11-20T11:37:06 EST" name="Default suite" finished-at="2019-11-20T11:37:16 EST" duration-ms="10309">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18968" started-at="2019-11-19T20:55:35 EST" finished-at="2019-11-19T20:55:54 EST">
-      <class name="selenium4Features.GetLocation">
-        <test-method status="PASS" signature="test1()[pri:0, instance:selenium4Features.GetLocation@72b6cbcc]" name="test1" duration-ms="18893" started-at="2019-11-19T20:55:35 EST" finished-at="2019-11-19T20:55:54 EST">
+    <test started-at="2019-11-20T11:37:06 EST" name="Default test" finished-at="2019-11-20T11:37:16 EST" duration-ms="10309">
+      <class name="selenium4Features.CaptureScreenShotSpecificSection">
+        <test-method signature="test1()[pri:0, instance:selenium4Features.CaptureScreenShotSpecificSection@6e509ffa]" started-at="2019-11-20T11:37:06 EST" name="test1" finished-at="2019-11-20T11:37:16 EST" duration-ms="10234" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-      </class> <!-- selenium4Features.GetLocation -->
+      </class> <!-- selenium4Features.CaptureScreenShotSpecificSection -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

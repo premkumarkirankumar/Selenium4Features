@@ -1,18 +1,16 @@
 package selenium4Features;
 
-import java.io.File;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CaptureElementScreenshot {
+public class RelativeLocatorsNear {
 	
 	@Test
 	public void test1() throws Exception {
@@ -25,19 +23,15 @@ public class CaptureElementScreenshot {
 		Thread.sleep(3000);
 		
 		
-		WebElement logo= driver.findElement(By.xpath("//img[@title='ServiceNow']"));
-		//WebElement username=driver.findElement(By.xpath("//input[@id='username']"));
-		
-		File file=logo.getScreenshotAs(OutputType.FILE);
-		//File file=username.getScreenshotAs(OutputType.FILE);
-	
-		
-		File destFile= new File("logo.png");
-		FileUtils.copyFile(file, destFile);
-		
+		WebElement label= driver.findElement(By.xpath("//label[@for='password']"));
+
+		//usage of relative locator // Capture book # 5 information
+		WebElement password =driver.findElement(RelativeLocator.withTagName("input").near(label));
+		password.click();
 		driver.quit();
 
-		
+			
 	}
 
 }
+ 
