@@ -1,0 +1,36 @@
+/target/
+/selenium-reports/
+/test-output/
+/allegis-automation2.7z
+/bin/
+/lib/
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.exe
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+*.vscode
+.settings/
+/.settings/*
+/.settings/
+.classpath
+/bin/
+/allure-results/
+/selenium-reports/
