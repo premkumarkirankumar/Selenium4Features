@@ -17,7 +17,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -26,56 +27,77 @@ public class Base {
 	public WebDriver driver;
 	public Properties prop;
 	public static Logger log = LogManager.getLogger(Base.class.getName());
-	
+
+	@BeforeTest
+	public void setup() throws IOException {
+		driver = initializeDriver();
+		driver.get(prop.getProperty("url"));
+	}
+
+	@AfterTest
+	public void tearDown() {
+		driver.quit();
+	}
+
 	/**
 	 * Method to initialize Driver
+	 * 
 	 * @return
 	 * @throws IOException
 	 */
 	public WebDriver initializeDriver() throws IOException {
 
 		prop = new Properties();
-		String filepath=System.getProperty("user.dir")+"/src/main/java/resources/data.properties";
+		String filepath = System.getProperty("user.dir") + "/src/main/java/resources/data.properties";
 		FileInputStream fis = new FileInputStream(filepath);
 		prop.load(fis);
 		String browserName = prop.getProperty("browser");
-		log.info("Browser for Test :"+browserName);
+		log.info("Browser for Test :" + browserName);
 		if (browserName.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			 driver = new ChromeDriver();
+			driver = new ChromeDriver();
 		} else if (browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			 driver = new FirefoxDriver();
+			driver = new FirefoxDriver();
 		} else if (browserName.equals("edge")) {
 			WebDriverManager.edgedriver().setup();
-			 driver = new EdgeDriver();
+			driver = new EdgeDriver();
 		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		return driver;
 
 	}
-	
+
 	/**
 	 * Method to Highlight an element
+	 * 
 	 * @param ele
 	 * @param driver
 	 */
 	public static void highlightElement(WebElement ele, WebDriver driver) {
-		JavascriptExecutor js= (JavascriptExecutor)driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].style.border='2px solid red'", ele);
-		
+
 	}
-	
-	
-	public void getScreenShotPath(String testCaseName,WebDriver driver) throws IOException
-	{
-		
+
+	/**
+	 * Method to take take screen of the page
+	 * 
+	 * @param testCaseName
+	 * @param driver
+	 * @throws IOException
+	 */
+	public void getScreenShotPath(String testCaseName, WebDriver driver) throws IOException {
+
 		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String destinationFile = System.getProperty("user.dir")+"\\reports\\"+testCaseName+".png";
-		FileUtils.copyFile(source,new File(destinationFile));
-
+		String destinationFile = System.getProperty("user.dir") + "\\reports\\" + testCaseName + ".png";
+		FileUtils.copyFile(source, new File(destinationFile));
 
 	}
 	
+	public void hardWait(long secs) throws Exception {
+		Thread.sleep(secs);
+	}
+		
 }
