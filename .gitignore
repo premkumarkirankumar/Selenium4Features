@@ -3,6 +3,7 @@
 /test-output/
 /bin/
 /lib/
+/reports/
 
 # Compiled class file
 *.class
