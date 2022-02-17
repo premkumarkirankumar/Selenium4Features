@@ -88,7 +88,7 @@ public class Base {
 	 * @param driver
 	 * @throws IOException
 	 */
-	public void getScreenShotPath(String testCaseName, WebDriver driver) throws IOException {
+	public void getScreenShot(String testCaseName, WebDriver driver) throws IOException {
 
 		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String destinationFile = System.getProperty("user.dir") + "\\reports\\" + testCaseName + ".png";
@@ -96,8 +96,20 @@ public class Base {
 
 	}
 	
+	/**
+	 * Method to do hard wait for specific seconds
+	 * @param secs
+	 * @throws Exception
+	 */
 	public void hardWait(long secs) throws Exception {
 		Thread.sleep(secs);
+	}
+	
+	/*
+	 * Method to get title 
+	 */
+	public String getPageTitle() {
+		return driver.getTitle();
 	}
 		
 }
