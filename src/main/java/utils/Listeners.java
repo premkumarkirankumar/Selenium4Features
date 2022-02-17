@@ -24,7 +24,10 @@ public class Listeners extends Base implements ITestListener {
 		WebDriver driver=null;
 		String testMethodName= result.getMethod().getMethodName();
 		try {
-			driver=(WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
+			//getting the context from the befor test setup method
+			   ITestContext context = result.getTestContext();
+			   driver = (WebDriver) context.getAttribute("WebDriver");
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,8 +16,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.ITestContext;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -28,13 +28,14 @@ public class Base {
 	public Properties prop;
 	public static Logger log = LogManager.getLogger(Base.class.getName());
 
-	@BeforeTest
-	public void setup() throws IOException {
+	@BeforeMethod
+	public void setup(ITestContext context) throws IOException {
 		driver = initializeDriver();
 		driver.get(prop.getProperty("url"));
+		context.setAttribute("WebDriver", driver);
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
 		driver.quit();
 	}

@@ -15,7 +15,7 @@ public class TestScreenShot extends Base {
 	@Test
 	public void testTakePageScreenshot() throws Exception {
 		
-		hardWait(5000);
+		hardWait(2000);
 		String nameofCurrMethod = new Throwable().getStackTrace()[0].getMethodName();
 		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String destinationFile = System.getProperty("user.dir")+"\\reports\\"+nameofCurrMethod+".jpg";
@@ -26,7 +26,7 @@ public class TestScreenShot extends Base {
 	@Test
 	public void testTakeFullPageScreenshot() throws Exception {
 		
-		hardWait(5000);
+		hardWait(2000);
 		String nameofCurrMethod = new Throwable().getStackTrace()[0].getMethodName();
 		if(driver instanceof FirefoxDriver) {
 		File source = ((FirefoxDriver) driver).getFullPageScreenshotAs(OutputType.FILE);

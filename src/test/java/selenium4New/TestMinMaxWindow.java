@@ -1,6 +1,7 @@
 package selenium4New;
 
 import org.testng.annotations.Test;
+
 import utils.Base;
 
 public class TestMinMaxWindow extends Base {
