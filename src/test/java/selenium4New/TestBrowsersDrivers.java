@@ -16,7 +16,7 @@ public class TestBrowsersDrivers {
 		System.out.println(driver.getTitle());
 		driver.quit();
 	}
-	
+
 	@Test
 	public void testFirefox() {
 		WebDriverManager.firefoxdriver().setup();
@@ -25,7 +25,7 @@ public class TestBrowsersDrivers {
 		System.out.println(driver.getTitle());
 		driver.quit();
 	}
-	
+
 	@Test
 	public void testFirefoxSpecificVersion() {
 		WebDriverManager.firefoxdriver().driverVersion("0.30.0").setup();
@@ -34,8 +34,7 @@ public class TestBrowsersDrivers {
 		System.out.println(driver.getTitle());
 		driver.quit();
 	}
-	
-	
+
 	@Test
 	public void testEdge() {
 		WebDriverManager.edgedriver().setup();

@@ -4,9 +4,9 @@
 	<listeners>
 		<listener class-name="utils.Listeners" />
 	</listeners>
-	<test name="Selenium 4 Tests">
+	<test name="Selenium 4 Tests" parallel="classes">
 		<classes>
-			<!----> <class name="selenium4New.TestBrowsersDrivers"/> 
+			<class name="selenium4New.TestBrowsersDrivers" />
 			<class name="selenium4New.TestMinMaxWindow" />
 			<class name="selenium4New.TestScreenShot" />
 			<class name="selenium4New.TestSynchronization" />

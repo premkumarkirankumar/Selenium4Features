@@ -4,6 +4,7 @@
 /bin/
 /lib/
 /reports/
+/extentReports/
 
 # Compiled class file
 *.class
