@@ -8,10 +8,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import com.epam.healenium.SelfHealingDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Description;
 
 public class TestSelfHealing {
 	
     WebDriver driver;
+    
+	@Description("Test for self healing element")
 	@Test
 	public void testSelfHealing() {
 		WebDriverManager.chromedriver().setup();

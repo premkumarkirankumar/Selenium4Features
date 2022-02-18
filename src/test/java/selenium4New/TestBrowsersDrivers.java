@@ -5,9 +5,11 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Description;
 
 public class TestBrowsersDrivers {
 
+	@Description("Test to verify Chrome Driver")
 	@Test
 	public void testChrome() {
 		WebDriverManager.chromedriver().setup();
@@ -17,6 +19,7 @@ public class TestBrowsersDrivers {
 		driver.quit();
 	}
 
+	@Description("Test to verify Firefox Driver")
 	@Test
 	public void testFirefox() {
 		WebDriverManager.firefoxdriver().setup();
@@ -26,6 +29,7 @@ public class TestBrowsersDrivers {
 		driver.quit();
 	}
 
+	@Description("Test to verify Firefox with specificversion Driver")
 	@Test
 	public void testFirefoxSpecificVersion() {
 		WebDriverManager.firefoxdriver().driverVersion("0.30.0").setup();
@@ -35,6 +39,7 @@ public class TestBrowsersDrivers {
 		driver.quit();
 	}
 
+	@Description("Test to verify Edge Driver")
 	@Test
 	public void testEdge() {
 		WebDriverManager.edgedriver().setup();

@@ -7,12 +7,14 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+import io.qameta.allure.Description;
 import pages.TestPages;
 import utils.Base;
 import utils.WaitUtils;
 
 public class TestScreenShot extends Base {
 
+	@Description("Test to take element screen shot")
 	@Test
 	public void testTakeElementScreenshot() throws Exception {
 
@@ -24,6 +26,7 @@ public class TestScreenShot extends Base {
 		FileUtils.copyFile(source, new File(destinationFile));
 	}
 
+	@Description("Test to take page screen shot")
 	@Test
 	public void testTakePageScreenshot() throws Exception {
 
@@ -34,6 +37,7 @@ public class TestScreenShot extends Base {
 		FileUtils.copyFile(source, new File(destinationFile));
 	}
 
+	@Description("Test to take full page screen shot")
 	@Test
 	public void testTakeFullPageScreenshot() throws Exception {
 

@@ -3,14 +3,16 @@
 <suite name="Suite">
 	<listeners>
 		<listener class-name="utils.Listeners" />
+		<listener class-name="utils.AllureReportListeners" />
+
 	</listeners>
 	<test name="Selenium 4 Tests">
 		<classes>
-			<!-- <class name="selenium4New.TestBrowsersDrivers"/> -->
+			<!-- <class name="selenium4New.TestBrowsersDrivers"/> 
 			<class name="selenium4New.TestMinMaxWindow" />
 			<class name="selenium4New.TestRelativeLocators" />
 			<class name="selenium4New.TestScreenShot" />
-			<class name="selenium4New.TestSwitchingFrames" />
+			<class name="selenium4New.TestSwitchingFrames" />-->
 			<class name="selenium4New.TestSynchronization" />
 
 		</classes>

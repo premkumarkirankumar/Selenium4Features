@@ -1,16 +1,16 @@
 package utils;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.time.Duration;
 import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -22,23 +22,32 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.HasFullPageScreenshot;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-
-import com.epam.healenium.SelfHealingDriver;
-
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+@Listeners({AllureReportListeners.class})
 
 public class Base {
 
 	public WebDriver driver;
 	public Properties prop;
 	public static Logger log = LogManager.getLogger(Base.class.getName());
+	public static ThreadLocal<WebDriver> thisdriver = new ThreadLocal<WebDriver>();
+
+	@BeforeSuite
+	public void cleanup() throws IOException {
+		deleteFolder("allure-results");
+	}
+	
+	@AfterSuite
+	public void teadDownTasks() throws Exception {
+		runCMDAllure();
+	}
 
 	@BeforeMethod
 	public void setup(ITestContext context) throws IOException {
@@ -99,8 +108,13 @@ public class Base {
 		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
-		return driver;
+		thisdriver.set(driver);
+		return getDriver();
 
+	}
+
+	public static synchronized WebDriver getDriver() {
+		return thisdriver.get();
 	}
 
 	/**
@@ -191,6 +205,34 @@ public class Base {
 		return driver.getTitle();
 	}
 
-
+	/**
+	 * Method to delete Folder
+	 * 
+	 * @param pathToDelete
+	 * @throws IOException
+	 */
+	public void deleteFolder(String pathToDelete) throws IOException {
+		String destinationFile = System.getProperty("user.dir") + "\\" + pathToDelete + "\\";
+		FileUtils.deleteDirectory(new File(destinationFile));
+	}
+	
+	
+	/**
+	 * Method to run CMD for Allure
+	 * @throws Exception
+	 */
+	public void runCMDAllure( ) throws Exception {
+	       ProcessBuilder builder = new ProcessBuilder(
+	               "cmd.exe", "/c", "allure serve C:\\Users\\Kiran\\Documents\\AutomationProjects\\Selenium4Features\\allure-results");
+	           builder.redirectErrorStream(true);
+	           Process p = builder.start();
+	           BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+	           String line;
+	           while (true) {
+	               line = r.readLine();
+	               if (line == null) { break; }
+	               log.info(line);
+	           }
+	}
 
 }

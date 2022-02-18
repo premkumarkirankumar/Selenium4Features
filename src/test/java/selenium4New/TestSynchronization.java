@@ -1,6 +1,7 @@
 package selenium4New;
 
 import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -10,17 +11,18 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import io.qameta.allure.Description;
 import pages.TestPages;
 import utils.Base;
 
 public class TestSynchronization extends Base {
 
-	@Test
+	@Description("Test to use Implicit Wait")
+	@Test(description="Validate Implicit method")
 	public void testImplicitWait() {
 
 		// param need to be given in the following way with Selenium 4
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
 		log.info(getPageTitle());
 		TestPages ap = new TestPages(driver);
 		ap.clickOptionOurBrands();
@@ -28,7 +30,8 @@ public class TestSynchronization extends Base {
 
 	}
 
-	@Test
+	@Description("Test to use Explicit Wait")
+	@Test(description="Validate Explicit method")
 	public void testExcplicitWait() {
 
 		log.info(getPageTitle());
@@ -47,6 +50,8 @@ public class TestSynchronization extends Base {
 
 	}
 
+	
+	@Description("Test to use Fluent Wait")
 	@Test
 	public void testFluentWait() {
 

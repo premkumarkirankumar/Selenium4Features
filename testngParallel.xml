@@ -2,16 +2,22 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-		<listener class-name="utils.Listeners" />
+		<listener class-name="utils.ExtentListeners" />
+		<listener class-name="utils.AllureReportListeners" />
 	</listeners>
 	<test name="Selenium 4 Tests" parallel="classes">
 		<classes>
+			<!-- <class name="selenium4New.TestAllureReports" />
 			<class name="selenium4New.TestBrowsersDrivers" />
 			<class name="selenium4New.TestMinMaxWindow" />
 			<class name="selenium4New.TestRelativeLocators" />
 			<class name="selenium4New.TestScreenShot" />
 			<class name="selenium4New.TestSwitchingFrames" />
+			<class name="selenium4New.TestSynchronization" /> -->
+
+			<class name="selenium4New.TestAllureReports" />
 			<class name="selenium4New.TestSynchronization" />
+
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

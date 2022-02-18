@@ -4,8 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import utils.WaitUtils;
+import io.qameta.allure.Step;
 
 public class TestPages {
 
@@ -30,6 +29,12 @@ public class TestPages {
 
 	@FindBy(xpath = "//h1[contains(text(),'Staffing and Recruiting')]")
 	WebElement servicesPageStaffRecuritingServices;
+	
+	@FindBy(xpath="//input[@id='username']")
+	WebElement username;
+	
+	@FindBy(xpath="//input[@id='password']")
+	WebElement password;
 
 	public void clickOptionOurBrands() {
 		optionOurBrands.click();
@@ -57,6 +62,19 @@ public class TestPages {
 			validation = true;
 		}
 		return validation;
+	}
+	
+	
+	@Step("Enter username {0}")
+	public void enterUserName(String uName) {
+		if (username.isDisplayed())
+			username.sendKeys(uName);
+	}
+
+	@Step("Enter password {0}")
+	public void enterPassword(String pwd) {
+		if (password.isDisplayed())
+			password.sendKeys(pwd);
 	}
 
 }

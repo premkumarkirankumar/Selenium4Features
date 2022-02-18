@@ -4,11 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.annotations.Test;
+import io.qameta.allure.Description;
 import utils.Base;
 import utils.WaitUtils;
 
 public class TestRelativeLocators extends Base {
 
+	
+	@Description("Test to verify Relative locator below")
 	@Test
 	public void testRelativeLocatorBelow() throws Exception {
 
@@ -22,6 +25,7 @@ public class TestRelativeLocators extends Base {
 		WaitUtils.hardWait(5000);
 	}
 
+	@Description("Test to verify Relative locator above")
 	@Test
 	public void testRelativeLocatorAbove() throws Exception {
 
@@ -36,6 +40,7 @@ public class TestRelativeLocators extends Base {
 		WaitUtils.hardWait(5000);
 	}
 
+	@Description("Test to verify Relative locator near")
 	@Test
 	public void testRelativeLocatorNear() throws Exception {
 
@@ -48,6 +53,7 @@ public class TestRelativeLocators extends Base {
 		WaitUtils.hardWait(5000);
 	}
 
+	@Description("Test to verify Relative locator to right of")
 	@Test
 	public void testRelativeLocatorToRightOf() throws Exception {
 
@@ -60,6 +66,7 @@ public class TestRelativeLocators extends Base {
 		WaitUtils.hardWait(5000);
 	}
 
+	@Description("Test to verify Relative locator to left of")
 	@Test
 	public void testRelativeLocatorToLeftOf() throws Exception {
 

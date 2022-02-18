@@ -2,11 +2,13 @@ package selenium4New;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
+import io.qameta.allure.Description;
 import utils.Base;
+
 
 public class TestSwitchingFrames extends Base {
 
+	@Description("Test to switch between frames")
 	@Test
 	public void testRelativeLocatorToLeftOf() throws Exception {
 
@@ -24,7 +26,6 @@ public class TestSwitchingFrames extends Base {
 		driver.switchTo().parentFrame();
 		log.info("Number of frames:" + driver.findElements(By.tagName("iframe")).size());
 		// driver.findElement(By.xpath("//body/h1")).getText();
-
 	}
 
 }
