@@ -8,13 +8,15 @@
 	</listeners>
 	<test name="Selenium 4 Tests">
 		<classes>
-			<!-- <class name="selenium4New.TestBrowsersDrivers"/> 
+			<class name="selenium4New.TestAllureReports" />
+			<class name="selenium4New.TestBrowsersDrivers" />
 			<class name="selenium4New.TestMinMaxWindow" />
+			<class name="selenium4New.TestNewTabNewWindow" />
 			<class name="selenium4New.TestRelativeLocators" />
 			<class name="selenium4New.TestScreenShot" />
-			<class name="selenium4New.TestSwitchingFrames" />-->
-			<class name="selenium4New.TestSynchronization" />
-
+			<class name="selenium4New.TestSelfHealing" />
+			<class name="selenium4New.TestSwitchingFrames" />
+			<class name="selenium4New.TestSynchronization" /> 
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -38,23 +38,22 @@ public class AllureReportListeners extends Base implements ITestListener {
 	
 	@Override
 	public void onStart(ITestContext context) {
-		log.info("I am in onStart method " + context.getName());
+		log.info("Test Start :" + context.getName());
 		context.setAttribute("WebDriver", Base.getDriver());
 
 	}
 	
 	@Override
+	public void onFinish(ITestContext context) {
+		log.info("Test Finish :" + context.getName());
+	}
+	
+	@Override
 	public void onTestSuccess(ITestResult result) {
-		log.info("I am in onTestSuccess method " + getTestMethodName(result) + " succeed");
+		log.info("Test success : " + getTestMethodName(result) + " succeed");
 		saveTextLog(getTestMethodName(result) + "Test Success");
 	}
 
-
-	@Override
-	public void onFinish(ITestContext context) {
-		log.info("I am in onFinish method " + context.getName());
-	}
-	
 	@Override
 	public void onTestFailure(ITestResult result) {
 		log.info("I am in onTestFailure method " + getTestMethodName(result) + " failed");
