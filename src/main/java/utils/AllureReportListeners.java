@@ -33,7 +33,42 @@ public class AllureReportListeners extends Base implements ITestListener {
 	public static String attachHtml(String html) {
 		return html;
 	}
+	
+///*	
+	
+	@Override
+	public void onStart(ITestContext context) {
+		log.info("I am in onStart method " + context.getName());
+		context.setAttribute("WebDriver", Base.getDriver());
 
+	}
+	
+	@Override
+	public void onTestSuccess(ITestResult result) {
+		log.info("I am in onTestSuccess method " + getTestMethodName(result) + " succeed");
+		saveTextLog(getTestMethodName(result) + "Test Success");
+	}
+
+
+	@Override
+	public void onFinish(ITestContext context) {
+		log.info("I am in onFinish method " + context.getName());
+	}
+	
+	@Override
+	public void onTestFailure(ITestResult result) {
+		log.info("I am in onTestFailure method " + getTestMethodName(result) + " failed");
+		WebDriver driver = Base.getDriver();
+		// Allure ScreenShotRobot and SaveTestLog
+		if (driver instanceof WebDriver) {
+			log.info("Screenshot captured for test case:" + getTestMethodName(result));
+			saveScreenshotPNG(driver);
+		}
+		// Save a log on allure.
+		saveTextLog(getTestMethodName(result) + " failed and screenshot taken!");
+	}
+//*/
+/*
 	@Override
 	public void onTestStart(ITestResult result) {
 		log.info("I am in onTestStart method " + getTestMethodName(result) + " start");
@@ -87,5 +122,5 @@ public class AllureReportListeners extends Base implements ITestListener {
 	public void onFinish(ITestContext context) {
 		log.info("I am in onFinish method " + context.getName());
 	}
-
+*/
 }

@@ -13,9 +13,9 @@
 			<class name="selenium4New.TestRelativeLocators" />
 			<class name="selenium4New.TestScreenShot" />
 			<class name="selenium4New.TestSwitchingFrames" />
-			<class name="selenium4New.TestSynchronization" /> -->
+			<class name="selenium4New.TestSynchronization" /> 
 
-			<class name="selenium4New.TestAllureReports" />
+			<class name="selenium4New.TestAllureReports" />-->
 			<class name="selenium4New.TestSynchronization" />
 
 		</classes>
