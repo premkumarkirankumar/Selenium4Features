@@ -39,11 +39,6 @@ public class ExtentListeners extends Base implements ITestListener {
 
 			e.printStackTrace();
 		}
-		/*
-		 * try { getScreenShot(testMethodName, driver); } catch (Exception e) {
-		 * 
-		 * e.printStackTrace(); }
-		 */
 		try {
 			extentTest.get().addScreenCaptureFromPath(getScreenShotPath(testMethodName, driver),
 					result.getMethod().getMethodName());
