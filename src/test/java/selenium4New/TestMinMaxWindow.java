@@ -3,6 +3,7 @@ package selenium4New;
 import org.testng.annotations.Test;
 
 import utils.Base;
+import utils.WaitUtils;
 
 public class TestMinMaxWindow extends Base {
 
@@ -27,7 +28,7 @@ public class TestMinMaxWindow extends Base {
 
 		driver.manage().window().fullscreen(); // New Method
 		log.info(getPageTitle());
-		hardWait(3000);
+		WaitUtils.hardWait(3000);
 
 	}
 

@@ -30,6 +30,8 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.epam.healenium.SelfHealingDriver;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
@@ -182,16 +184,6 @@ public class Base {
 
 	}
 
-	/**
-	 * Method to do hard wait for specific seconds
-	 * 
-	 * @param secs
-	 * @throws Exception
-	 */
-	public void hardWait(long secs) throws Exception {
-		Thread.sleep(secs);
-	}
-
 	/*
 	 * Method to get title
 	 */
@@ -199,31 +191,6 @@ public class Base {
 		return driver.getTitle();
 	}
 
-	/**
-	 * Method for explicit wait for that element to be Clickable
-	 * 
-	 * @param by
-	 * @param seconds
-	 */
-	public void waitForElementToBeClickable(By by, int seconds) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-		wait.until(ExpectedConditions.elementToBeClickable(by)).click();
 
-	}
-
-	/**
-	 * Method to explicit wait for that element to be clickable with polling
-	 * 
-	 * @param by
-	 * @param seconds
-	 * @param pollingSeconds
-	 */
-	public void waitForElementToBeClickableWithPolling(By by, int seconds, int pollingSeconds) {
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(seconds))
-				.pollingEvery(Duration.ofSeconds(pollingSeconds)).withMessage("Time out as the condition is not met")
-				.ignoring(NoSuchElementException.class);
-		wait.until(ExpectedConditions.elementToBeClickable(by)).click();
-
-	}
 
 }
