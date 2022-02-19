@@ -70,7 +70,7 @@ public class Base {
 	public WebDriver initializeDriver() throws IOException {
 
 		prop = new Properties();
-		String filepath = System.getProperty("user.dir") + "/src/main/java/resources/data.properties";
+		String filepath = System.getProperty("user.dir") + "/resources/data.properties";
 		FileInputStream fis = new FileInputStream(filepath);
 		prop.load(fis);
 		String browserName = prop.getProperty("browser");
