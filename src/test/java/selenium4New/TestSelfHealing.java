@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.epam.healenium.SelfHealingDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
+import pages.TestPages;
 
 public class TestSelfHealing {
 	
@@ -23,8 +24,17 @@ public class TestSelfHealing {
 		driver.get("https://www.allegisgroup.com/en");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
-		driver.findElement(By.xpath("//a[contains(text(),'Our')]")).click();
+		TestPages ap = new TestPages(driver);
+		ap.clickOptionOurBrands();
+		ap.clickOptionHome();
 		driver.quit();
+		/*
+		driver.get("https://www.allegisgroup.com/en");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath("//a[contains(text(),'Our Brands')]")).click();
+		driver.quit();
+		*/
 	}
 
 

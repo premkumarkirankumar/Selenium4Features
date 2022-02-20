@@ -130,4 +130,7 @@ public class TestAllureReports extends Base {
 		ap.enterPassword("testPassord");
 		
 	}
+	
+	// allure serve
+	// allure serve C:\Users\Kiran\Documents\AutomationProjects\Selenium4Features\allure-results
 }
