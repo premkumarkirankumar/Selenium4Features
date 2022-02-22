@@ -34,7 +34,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
 
-	public WebDriver driver;
+	public static WebDriver driver;
 	public Properties prop;
 	public static Logger log = LogManager.getLogger(Base.class.getName());
 	public static ThreadLocal<WebDriver> thisdriver = new ThreadLocal<WebDriver>();
@@ -70,7 +70,7 @@ public class Base {
 	public WebDriver initializeDriver() throws IOException {
 
 		prop = new Properties();
-		String filepath = System.getProperty("user.dir") + "/resources/data.properties";
+		String filepath = System.getProperty("user.dir") + "/src/main/resources/data.properties";
 		FileInputStream fis = new FileInputStream(filepath);
 		prop.load(fis);
 		String browserName = prop.getProperty("browser");

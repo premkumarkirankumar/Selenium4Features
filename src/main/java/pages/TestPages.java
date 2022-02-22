@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import io.qameta.allure.Step;
+import utils.WaitUtils;
 
 public class TestPages {
 
@@ -15,12 +16,24 @@ public class TestPages {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[contains(text(),'Our Brands')]")
-	WebElement optionOurBrands;
-
+	@FindBy(xpath = "//li[@class='score-megamenu-dropdown']/a[normalize-space()='Careers']")
+	WebElement optionCareers;
+	
 	@FindBy(xpath = "//li[@class='score-megamenu-dropdown megamenu-full']/a[.='Services']")
 	WebElement optionServices;
-
+	
+	@FindBy(xpath = "//li[@class='score-megamenu-basic-item']/a[normalize-space()='Our Brands']")
+	WebElement optionOurBrands;
+	
+	@FindBy(xpath = "//li[@class='score-megamenu-dropdown megamenu-full']/a[normalize-space()='Insights']")
+	WebElement optionInsights;
+	
+	@FindBy(xpath = "//li[@class='score-megamenu-dropdown megamenu-full']/a[normalize-space()='About Us']")
+	WebElement optionAboutUs;
+	
+	@FindBy(xpath = "//li[@class='score-megamenu-basic-item']/a[normalize-space()='Locations']")
+	WebElement optionLocations;
+	
 	@FindBy(xpath = " //span[@itemprop='name']")
 	WebElement optionHome;
 
@@ -40,6 +53,12 @@ public class TestPages {
 		optionOurBrands.click();
 	}
 
+	public void elementOptionOurBrandsExist() throws Exception {	
+		WaitUtils.hardWait(30000);
+		//WaitUtils.waitForElementToBeClickable(optionOurBrands,seconds);
+		
+	}
+	
 	public WebElement elementOptionOurBrands() {
 		return optionOurBrands;
 	}
@@ -76,5 +95,64 @@ public class TestPages {
 		if (password.isDisplayed())
 			password.sendKeys(pwd);
 	}
+	
+	
+	public boolean validateHomePagetab() {
+		boolean validation = false;
+		if(optionCareers.isDisplayed() && optionServices.isDisplayed() && optionOurBrands.isDisplayed() && optionInsights.isDisplayed() &&
+				optionAboutUs.isDisplayed() && optionLocations.isDisplayed() ) {
+			validation=true;
+		}
+		return validation;
+	}
+	
+	public boolean validateHomePagetabCareers() {
+		boolean validation = false;
+		if(optionCareers.isDisplayed()) {
+			validation=true;
+		}
+		return validation;
+	}
+	
+	public boolean validateHomePagetabServices() {
+		boolean validation = false;
+		if(optionServices.isDisplayed()) {
+			validation=true;
+		}
+		return validation;
+	}
+	
+	public boolean validateHomePagetabOurBrands() {
+		boolean validation = false;
+		if(optionOurBrands.isDisplayed()) {
+			validation=true;
+		}
+		return validation;
+	}
+	
+	public boolean validateHomePagetabInsights() {
+		boolean validation = false;
+		if(optionInsights.isDisplayed()) {
+			validation=true;
+		}
+		return validation;
+	}
+	
+	public boolean validateHomePagetabAboutUs() {
+		boolean validation = false;
+		if(optionAboutUs.isDisplayed()) {
+			validation=true;
+		}
+		return validation;
+	}
+	
+	public boolean validateHomePagetabLocations() {
+		boolean validation = false;
+		if(optionLocations.isDisplayed() ) {
+			validation=true;
+		}
+		return validation;
+	}
+
 
 }

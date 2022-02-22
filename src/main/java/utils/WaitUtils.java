@@ -28,10 +28,9 @@ public class WaitUtils extends Base {
 	 * @param by
 	 * @param seconds
 	 */
-	public void waitForElementToBeClickable(WebElement element, int seconds) {
+	public static void waitForElementToBeClickable(WebElement element, int seconds) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 		wait.until(ExpectedConditions.elementToBeClickable(element)).click();
-
 	}
 
 	/**
@@ -41,7 +40,7 @@ public class WaitUtils extends Base {
 	 * @param seconds
 	 * @param pollingSeconds
 	 */
-	public void waitForElementToBeClickableWithPolling(WebElement element, int seconds, int pollingSeconds) {
+	public static void waitForElementToBeClickableWithPolling(WebElement element, int seconds, int pollingSeconds) {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(seconds))
 				.pollingEvery(Duration.ofSeconds(pollingSeconds)).withMessage("Time out as the condition is not met")
 				.ignoring(NoSuchElementException.class);

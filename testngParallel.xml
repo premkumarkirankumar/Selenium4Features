@@ -5,7 +5,15 @@
 		<listener class-name="utils.ExtentListeners" />
 		<listener class-name="utils.AllureReportListeners" />
 	</listeners>
-	<test name="Selenium 4 Tests" parallel="classes" thread-count="5">
+
+  <test name="PackageTest"  parallel="classes" thread-count="2">
+    <packages>
+      <package name="selenium4New"/>
+    </packages>
+ </test> 
+
+
+<!-- <test name="Selenium 4 Tests" parallel="classes" thread-count="5">
 		<classes>
 			<class name="selenium4New.TestAllureReports" />
 			<class name="selenium4New.TestBrowsersDrivers" />
@@ -17,5 +25,7 @@
 			<class name="selenium4New.TestSwitchingFrames" />
 			<class name="selenium4New.TestSynchronization" /> 
 		</classes>
-	</test> <!-- Test -->
+	</test>   -->
+
+
 </suite> <!-- Suite -->
