@@ -7,9 +7,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
+import utils.Base;
 
 
-public class TestBadSSLbypass {
+public class TestBadSSLbypass  extends Base {
 
 	@Description("Test to verify bad SSL")
 	@Test

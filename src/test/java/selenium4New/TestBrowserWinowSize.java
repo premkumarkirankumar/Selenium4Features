@@ -6,9 +6,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
+import utils.Base;
 import utils.WaitUtils;
 
-public class TestBrowserWinowSize {
+public class TestBrowserWinowSize extends Base{
 	
 	@Description("Test to open the browser in specific window size")
 	@Test

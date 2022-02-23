@@ -6,9 +6,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
+import utils.Base;
 import utils.WaitUtils;
 
-public class TestBrowserIncognito {
+public class TestBrowserIncognito extends Base {
 	
 	@Description("Test to open the browser in incognito mode")
 	@Test

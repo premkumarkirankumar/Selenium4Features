@@ -8,9 +8,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
+import utils.Base;
 import utils.WaitUtils;
 
-public class TestDisableInfoBar {
+public class TestDisableInfoBar extends Base {
 	
 	@Description("Test to disable the info bar")
 	@Test
