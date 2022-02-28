@@ -58,6 +58,7 @@ public class TestPages {
 		//WaitUtils.waitForElementToBeClickable(optionOurBrands,seconds);
 		
 	}
+
 	
 	public WebElement elementOptionOurBrands() {
 		return optionOurBrands;

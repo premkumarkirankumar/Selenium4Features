@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v96.network.Network;
 import org.testng.annotations.Test;
-import com.google.common.collect.ImmutableList;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import utils.Base;

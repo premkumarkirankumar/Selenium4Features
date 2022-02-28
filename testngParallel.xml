@@ -6,7 +6,7 @@
 		<listener class-name="utils.AllureReportListeners" />
 	</listeners>
 
-  <test name="PackageTest"  parallel="classes" thread-count="2">
+  <test name="PackageTest"  parallel="classes" thread-count="5">
     <packages>
       <package name="selenium4New"/>
     </packages>

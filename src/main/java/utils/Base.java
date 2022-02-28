@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 import org.apache.commons.io.FileUtils;
@@ -29,6 +30,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 @Listeners({AllureReportListeners.class})
 
@@ -38,6 +40,7 @@ public class Base {
 	public Properties prop;
 	public static Logger log = LogManager.getLogger(Base.class.getName());
 	public static ThreadLocal<WebDriver> thisdriver = new ThreadLocal<WebDriver>();
+	public String gridUrl="http://34.67.197.48:31616";
 
 	@BeforeSuite
 	public void cleanup() throws IOException {
@@ -46,7 +49,7 @@ public class Base {
 	
 	@AfterSuite
 	public void teadDownTasks() throws Exception {
-		runCMDAllure();
+		//runCMDAllure();
 	}
 
 	@BeforeMethod
@@ -61,6 +64,7 @@ public class Base {
 		driver.quit();
 	}
 
+	
 	/**
 	 * Method to initialize Driver
 	 * 
@@ -78,12 +82,20 @@ public class Base {
 		log.info("Browser for Test :" + browserName);
 		log.info("Browser to Run :" + browserRun);
 		if (browserName.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
+
 			if (browserRun.equals("headless")) {
+				WebDriverManager.chromedriver().setup();
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("headless");
 				driver = new ChromeDriver(options);
-			} else {
+			}
+			else if (browserRun.equals("grid")) {
+				ChromeOptions options = new ChromeOptions();
+				driver = new RemoteWebDriver(new URL(gridUrl), options);
+			}
+			else {
+				WebDriverManager.chromedriver().setup();
+				
 				driver = new ChromeDriver();
 			}
 		} else if (browserName.equals("firefox")) {
@@ -92,7 +104,12 @@ public class Base {
 				FirefoxOptions options = new FirefoxOptions();
 				options.addArguments("--headless");
 				driver = new FirefoxDriver(options);
-			} else {
+			}
+			else if (browserRun.equals("grid")) {
+				FirefoxOptions options = new FirefoxOptions();
+				driver = new RemoteWebDriver(new URL(gridUrl), options);
+			}
+			else {
 				driver = new FirefoxDriver();
 			}
 		} else if (browserName.equals("edge")) {
@@ -101,7 +118,11 @@ public class Base {
 				EdgeOptions options = new EdgeOptions();
 				options.addArguments("headless");
 				driver = new EdgeDriver(options);
-			} else {
+			}	else if (browserRun.equals("grid")) {
+				EdgeOptions options = new EdgeOptions();
+				driver = new RemoteWebDriver(new URL(gridUrl), options);
+			}
+			else {
 				driver = new EdgeDriver();
 			}
 

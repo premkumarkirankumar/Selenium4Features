@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="10">
+	<listeners>
+		<listener class-name="utils.ExtentListeners" />
+		<listener class-name="utils.AllureReportListeners" />
+	</listeners>
+	<test name="Selenium 4 Grid 1">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+	<test name="Selenium 4 Grid 2">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+	<test name="Selenium 4 Grid 3">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+	<test name="Selenium 4 Grid 4">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+	<test name="Selenium 4 Grid 5">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+	<test name="Selenium 4 Grid 6">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+	<test name="Selenium 4 Grid 7">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+	<test name="Selenium 4 Grid 8">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+	<test name="Selenium 4 Grid 9">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+
+	<test name="Selenium 4 Grid 10">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+	<test name="Selenium 4 Grid 11">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+
+	<test name="Selenium 4 Grid 12">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+
+	<test name="Selenium 4 Grid 13">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+
+	<test name="Selenium 4 Grid 14">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+
+	<test name="Selenium 4 Grid 15">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+
+	<test name="Selenium 4 Grid 16">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+
+	<test name="Selenium 4 Grid 17">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+
+	<test name="Selenium 4 Grid 18">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+	<test name="Selenium 4 Grid 19">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+
+	<test name="Selenium 4 Grid 20">
+		<classes>
+			<class name="selenium4New.TestGrid" />
+		</classes>
+	</test>
+
+
+</suite> <!-- Suite -->
