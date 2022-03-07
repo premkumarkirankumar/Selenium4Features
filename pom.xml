@@ -42,7 +42,7 @@
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
 					<suiteXmlFiles>
-						<suiteXmlFile>testngPetclinic.xml</suiteXmlFile>
+						<suiteXmlFile>testngPetclinicPROD.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 				<dependencies>

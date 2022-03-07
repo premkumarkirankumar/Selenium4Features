@@ -7,7 +7,7 @@
 	</listeners>
 	<test name="Test to validate Home Page">
 		<classes>
-			<class name="petClinic.TestHomePage" />
+			<class name="petClinic.TestHomePagePROD" />
 		</classes>
 	</test>
 

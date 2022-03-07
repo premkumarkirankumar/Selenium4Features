@@ -12,7 +12,7 @@ import io.qameta.allure.Description;
 import utils.WaitUtils; 
 
 
-public class TestHomePage {
+public class TestHomePageTEST {
 	
 	@Description("Test to verify HomePage")
 	@Test
@@ -20,7 +20,7 @@ public class TestHomePage {
 		
 		ChromeOptions opt = new ChromeOptions();
 		WebDriver driver=new RemoteWebDriver(new URL("http://34.70.191.209:31319"), opt);
-		driver.get("http://104.198.68.119:31358/petclinic/");
+		driver.get("http://35.226.132.164:1235/petclinic/");
 		String findOwners=(driver.findElement(By.xpath("//a[contains(@href,'owners')]/span[contains(text(),'Find')]")).getText());
 		System.out.println("Retrieved Text:"+findOwners);
 		boolean validation=false;
