@@ -18,7 +18,7 @@ public class TestGrid {
 	public void testSeleniumGrid() throws Exception {
 		
 		ChromeOptions opt = new ChromeOptions();
-		WebDriver driver=new RemoteWebDriver(new URL("http://34.67.197.48:30936"), opt);
+		WebDriver driver=new RemoteWebDriver(new URL("http://34.70.191.209:31319"), opt);
 		driver.get("https://selenium.dev/");
 		String dataName=(driver.findElement(By.xpath("//*[@id='selenium_logo']")).getDomAttribute("data-name"));
 		System.out.println("Retrieved Attribute: "+dataName);
