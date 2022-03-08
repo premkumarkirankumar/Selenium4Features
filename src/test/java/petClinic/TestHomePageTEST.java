@@ -22,6 +22,8 @@ public class TestHomePageTEST {
 		WebDriver driver=new RemoteWebDriver(new URL("http://34.70.191.209:31319"), opt);
 		driver.get("http://35.226.132.164:1235/petclinic/");
 		String findOwners=(driver.findElement(By.xpath("//a[contains(@href,'owners')]/span[contains(text(),'Find')]")).getText());
+	    String url = driver.getCurrentUrl();
+		System.out.println("Current URL:"+url );
 		System.out.println("Retrieved Text:"+findOwners);
 		boolean validation=false;
 		if(findOwners.contentEquals("FIND 3OWNERS")) {
