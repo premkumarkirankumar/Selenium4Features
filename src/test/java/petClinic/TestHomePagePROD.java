@@ -19,8 +19,8 @@ public class TestHomePagePROD {
 	public void testHomePage() throws Exception {
 		
 		ChromeOptions opt = new ChromeOptions();
-		WebDriver driver=new RemoteWebDriver(new URL("http://34.70.191.209:31319"), opt);
-		driver.get("http://104.198.68.119:31358/petclinic/");
+		WebDriver driver=new RemoteWebDriver(new URL("http://130.211.225.186:31319"), opt);
+		driver.get("http://35.222.49.12:30598/petclinic/");
 		String findOwners=(driver.findElement(By.xpath("//a[contains(@href,'owners')]/span[contains(text(),'Find')]")).getText());
 	    String url = driver.getCurrentUrl();
 		System.out.println("Current URL:"+url );
