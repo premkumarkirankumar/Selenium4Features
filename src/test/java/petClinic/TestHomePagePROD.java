@@ -26,7 +26,7 @@ public class TestHomePagePROD {
 		ChromeOptions opt = new ChromeOptions();
 		WebDriver driver=new RemoteWebDriver(new URL("http://130.211.225.186:31319"), opt);
 		driver.get("http://35.222.49.12:30598/petclinic/");
-		String findOwners=(driver.findElement(By.xpath("//a[contains(@href,'owners')]/span[contains(text(),'Find')]")).getText());
+		String findOwners=(driver.findElement(By.xpath("//a[contains(@href,'owners')]/span[contains(text(),'FIND')]")).getText());
 	    String url = driver.getCurrentUrl();
 		System.out.println("Current URL:"+url );
 		System.out.println("Retrieved Text:"+findOwners);
