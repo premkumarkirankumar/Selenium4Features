@@ -23,8 +23,8 @@ public class TestHomePagePROD {
 		//WebDriverManager.chromedriver().setup();
 		//WebDriver driver = new ChromeDriver();
 		ChromeOptions opt = new ChromeOptions();
-		WebDriver driver=new RemoteWebDriver(new URL("http://34.67.55.215:31319"), opt);
-		driver.get("http://34.123.22.83:30598/petclinic/");
+		WebDriver driver=new RemoteWebDriver(new URL("http://34.69.142.19:31319"), opt);
+		driver.get("http://34.135.81.53:30598/petclinic/");
 		String findOwners=(driver.findElement(By.xpath("//a[contains(@href,'owners')]/span[contains(text(),'FIND')]")).getText());
 	    String url = driver.getCurrentUrl();
 		System.out.println("Current URL:"+url );
