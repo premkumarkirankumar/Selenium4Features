@@ -13,18 +13,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import utils.WaitUtils; 
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v96.network.Network;
-import org.testng.annotations.Test;
-import com.google.common.collect.ImmutableList;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Description;
-import utils.Base;
-import utils.WaitUtils;
-
-
 public class TestHomePageTEST {
 	
 	@Description("Test to verify HomePage")
@@ -47,9 +35,6 @@ public class TestHomePageTEST {
 		Assert.assertTrue(validation );
 		WaitUtils.hardWait(10000);
 		driver.quit();
-		{
-			
-		}
 	}
 	
 

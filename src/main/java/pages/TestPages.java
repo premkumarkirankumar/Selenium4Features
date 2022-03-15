@@ -7,6 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 import io.qameta.allure.Step;
 import utils.WaitUtils;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v96.network.Network;
+import org.testng.annotations.Test;
+import com.google.common.collect.ImmutableList;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Description;
+import utils.Base;
+import utils.WaitUtils;
+
 public class TestPages {
 
 	WebDriver driver;
@@ -152,7 +163,11 @@ public class TestPages {
 		if(optionLocations.isDisplayed() ) {
 			validation=true;
 		}
+		{
+			
+		}
 		return validation;
+
 	}
 
 
