@@ -30,7 +30,7 @@ public class TestHomePagePROD {
 		System.out.println("Current URL:"+url );
 		System.out.println("Retrieved Text:"+findOwners);
 		boolean validation=false;
-		if(findOwners.contentEquals("FIND 9OWNERS")) {
+		if(findOwners.contentEquals("FIND 10OWNERS")) {
 			validation=true;
 		}
 		Assert.assertTrue(validation );
