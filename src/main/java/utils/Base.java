@@ -40,7 +40,7 @@ public class Base {
 	public Properties prop;
 	public static Logger log = LogManager.getLogger(Base.class.getName());
 	public static ThreadLocal<WebDriver> thisdriver = new ThreadLocal<WebDriver>();
-	public String gridUrl="http://34.67.197.48:31616";
+	public String gridUrl="http://34.66.211.24:31319";
 
 	@BeforeSuite
 	public void cleanup() throws IOException {
