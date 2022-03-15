@@ -41,7 +41,7 @@ public class TestHomePageTEST {
 		System.out.println("Current URL:"+url );
 		System.out.println("Retrieved Text:"+findOwners);
 		boolean validation=false;
-		if(findOwners.contentEquals("FIND 6OWNERS")) {
+		if(findOwners.contentEquals("FIND 8OWNERS")) {
 			validation=true;
 		}
 		Assert.assertTrue(validation );
