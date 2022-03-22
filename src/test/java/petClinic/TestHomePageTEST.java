@@ -29,7 +29,7 @@ public class TestHomePageTEST {
 		System.out.println("Current URL:"+url );
 		System.out.println("Retrieved Text:"+findOwners);
 		boolean validation=false;
-		if(findOwners.contentEquals("FIND 19OWNERS")) {
+		if(findOwners.contentEquals("FIND 20OWNERS")) {
 			validation=true;
 		}
 		Assert.assertTrue(validation );
