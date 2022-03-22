@@ -18,7 +18,33 @@ public class TestGrid {
 	public void testSeleniumGrid() throws Exception {
 		
 		ChromeOptions opt = new ChromeOptions();
-		WebDriver driver=new RemoteWebDriver(new URL("http://34.145.168.244:4444"), opt);
+		WebDriver driver=new RemoteWebDriver(new URL("http://10.62.234.23:4444"), opt);
+		driver.get("https://selenium.dev/");
+		String dataName=(driver.findElement(By.xpath("//*[@id='selenium_logo']")).getDomAttribute("data-name"));
+		System.out.println("Retrieved Attribute: "+dataName);
+		WaitUtils.hardWait(5000);
+		driver.quit();
+	}
+	
+	@Description("Test to verify GRID")
+	@Test
+	public void testSeleniumGrid1() throws Exception {
+		
+		ChromeOptions opt = new ChromeOptions();
+		WebDriver driver=new RemoteWebDriver(new URL("http://10.62.234.23:4444"), opt);
+		driver.get("https://selenium.dev/");
+		String dataName=(driver.findElement(By.xpath("//*[@id='selenium_logo']")).getDomAttribute("data-name"));
+		System.out.println("Retrieved Attribute: "+dataName);
+		WaitUtils.hardWait(5000);
+		driver.quit();
+	}
+	
+	@Description("Test to verify GRID")
+	@Test
+	public void testSeleniumGrid2() throws Exception {
+		
+		ChromeOptions opt = new ChromeOptions();
+		WebDriver driver=new RemoteWebDriver(new URL("http://10.62.234.23:4444"), opt);
 		driver.get("https://selenium.dev/");
 		String dataName=(driver.findElement(By.xpath("//*[@id='selenium_logo']")).getDomAttribute("data-name"));
 		System.out.println("Retrieved Attribute: "+dataName);
