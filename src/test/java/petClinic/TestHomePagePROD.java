@@ -23,14 +23,14 @@ public class TestHomePagePROD {
 		//WebDriverManager.chromedriver().setup();
 		//WebDriver driver = new ChromeDriver();
 		ChromeOptions opt = new ChromeOptions();
-		WebDriver driver=new RemoteWebDriver(new URL("http://35.184.90.5:31319"), opt);
-		driver.get("http://34.122.200.204:30598/petclinic/");
+		WebDriver driver=new RemoteWebDriver(new URL("http://34.121.186.233:31319"), opt);
+		driver.get("http://35.188.28.97:30598/petclinic/");
 		String findOwners=(driver.findElement(By.xpath("//a[contains(@href,'owners')]/span[contains(text(),'FIND')]")).getText());
 	    String url = driver.getCurrentUrl();
 		System.out.println("Current URL:"+url );
 		System.out.println("Retrieved Text:"+findOwners);
 		boolean validation=false;
-		if(findOwners.contentEquals("FIND 17OWNERS")) {
+		if(findOwners.contentEquals("FIND 18OWNERS")) {
 			validation=true;
 		}
 		Assert.assertTrue(validation );
